@@ -22,4 +22,5 @@ class JsonStringBuilder:
         try:
             return json.dumps(obj.__dict__)
         except Exception as ex:
-            return ex
+            print(">> JsonStringBuilder exception =")
+            print(ex)

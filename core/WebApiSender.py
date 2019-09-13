@@ -4,11 +4,16 @@ import models.SimpleHttpResponse as httpResp
 class WebApiSender: 
 
     def sendGetRequest(url):
-        resp = api.get(url)
-        return httpResp.SimpleHttpResponse(
-            resp.status_code,
-            resp.text,
-            '')
+        try:
+            resp = api.get(url)
+            return httpResp.SimpleHttpResponse(
+                resp.status_code,
+                resp.text,
+                ''
+                )
+        except Exception as ex:
+            print(">> API caller exception =")
+            print(ex)
 
     def sendPostRequest(baseUrl, jsonBody):
         try:
@@ -19,11 +24,8 @@ class WebApiSender:
             ''
             )
         except Exception as ex:
-            return httpResp.SimpleHttpResponse(
-                '',
-                '',
-                ex
-            )
+            print(">> API caller exception =")
+            print(ex)
         
         
         
