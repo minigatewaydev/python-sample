@@ -20,7 +20,7 @@ mtReq = _mtReq.MtRequest(
     "0",  # dlrMask
     "<YOUR-DLR-URL>",  # dlrUrl
     "1",  # coding
-    "text"
+    "text" # responseType
 )
 
 # METHODS ----------------------------------------
