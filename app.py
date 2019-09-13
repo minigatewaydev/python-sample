@@ -19,7 +19,7 @@ mtReq = _mtReq.MtRequest(
     "60123456789",  # to
     "Python sample using HTTP POST & GET",  # text
     "0",  # dlrMask
-    "",  # dlrUrl
+    "<YOUR-DLR-URL>",  # dlrUrl
     "1",  # coding
     "text"
 )
