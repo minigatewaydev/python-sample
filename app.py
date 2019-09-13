@@ -1,6 +1,7 @@
 import json
 import models.MtRequest as _mtReq
 import core.WebApiSender as _api
+import helpers.JsonStringBuilder as _jsonBuilder
 
 baseUrl = "http://162.253.16.28/api/send"
 api = _api.WebApiSender
@@ -14,25 +15,32 @@ mtReq = _mtReq.MtRequest(
     "123456",  # password
     "Python",  # from
     "60123456789",  # to
-    "Python sample"  # Text
+    "Python sample",  # text
+    "0",  # dlrMask
+    "",  # dlrUrl
+    "1"  # coding
 )
 
+jsonBuilder = _jsonBuilder.JsonStringBuilder
+
 # METHODS ----------------------------------------
+
+
 def sendGet():
     print("Executing GET request..")
 
-    url = baseUrl+"?gw-username="+mtReq.username+"&gw-password="+mtReq.password+"&gw-from="+mtReq.from_+"&gw-to="+mtReq.to+"&gw-text="+mtReq.text
+    url = baseUrl+"?gw-username="+mtReq.username+"&gw-password="+mtReq.password + \
+        "&gw-from="+mtReq.from_+"&gw-to="+mtReq.to+"&gw-text="+mtReq.text
 
-    resp = api.sendGetRequest(url)    
-    print(resp.responseContentString)
+    resp = api.sendGetRequest(url)
+    print("Response = " + jsonBuilder.generateJson(resp))
 
 
 def sendPost():
     print("Executing POST request")
-
-
-def test(data):
-    print(data)
+    mtReqJson = jsonBuilder.generateMtReq(mtReq)
+    resp = api.sendPostRequest(baseUrl=baseUrl, jsonBody=mtReqJson)
+    print("Response = " + jsonBuilder.generateJson(resp))
 
 
 # CALLER -----------------------------------------

@@ -11,6 +11,20 @@ class WebApiSender:
             '')
 
     def sendPostRequest(baseUrl, jsonBody):
-        resp = api.post(url=baseUrl, json=jsonBody)
+        try:
+            resp = api.post(url=baseUrl, json=jsonBody)
+            return httpResp.SimpleHttpResponse(
+            resp.status_code,
+            resp.text,
+            ''
+            )
+        except Exception as ex:
+            return httpResp.SimpleHttpResponse(
+                '',
+                '',
+                ex
+            )
+        
+        
         
         
