@@ -1,4 +1,3 @@
-import json
 import urllib.parse as urlparse
 import models.MtRequest as _mtReq
 import core.WebApiSender as _api
@@ -42,10 +41,6 @@ def sendGet():
 
 
 def sendPost():
-    data = {'gw-username': 'httpprepaid', 'gw-password': '123456', 'gw-from': 'PY', 'gw-to': '60123456789', 'gw-text': 'PY Test'}
-    data2 = json.dumps(data)
-    data3 = json.loads(data2)
-    #print(data3)
     print("Executing POST request..")
     mtReqJson = jsonBuilder.generateMtReq(mtReq)
     resp = api.sendPostRequest(baseUrl=baseUrl, jsonString=mtReqJson)
