@@ -46,7 +46,7 @@ def sendPost():
     data2 = json.dumps(data)
     data3 = json.loads(data2)
     #print(data3)
-    print("Executing POST request")
+    print("Executing POST request..")
     mtReqJson = jsonBuilder.generateMtReq(mtReq)
     resp = api.sendPostRequest(baseUrl=baseUrl, jsonString=mtReqJson)
     print("RESULT = ")
