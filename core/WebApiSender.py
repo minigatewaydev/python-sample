@@ -17,7 +17,7 @@ class WebApiSender:
 
     def sendPostRequest(baseUrl, jsonBody):
         try:
-            resp = api.post(url=baseUrl, json=jsonBody)
+            resp = api.post(url=baseUrl)
             return httpResp.SimpleHttpResponse(
             resp.status_code,
             resp.text,

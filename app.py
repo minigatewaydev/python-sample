@@ -6,6 +6,7 @@ import helpers.JsonStringBuilder as _jsonBuilder
 
 baseUrl = "http://162.253.16.28:5010/api/send"
 api = _api.WebApiSender
+jsonBuilder = _jsonBuilder.JsonStringBuilder
 
 # TODO: change according to your own data
 # for username & password. If you set 'dlrMask' to 1,
@@ -19,10 +20,9 @@ mtReq = _mtReq.MtRequest(
     "Python sample using HTTP POST & GET",  # text
     "0",  # dlrMask
     "",  # dlrUrl
-    "1"  # coding
+    "1",  # coding
+    "text"
 )
-
-jsonBuilder = _jsonBuilder.JsonStringBuilder
 
 # METHODS ----------------------------------------
 
@@ -32,7 +32,9 @@ def sendGet():
 
     url = baseUrl+"?gw-username="+mtReq.username+"&gw-password="+mtReq.password + \
         "&gw-from="+urlparse.quote(mtReq.from_) + \
-        "&gw-to="+urlparse.quote(mtReq.to)+"&gw-text="+urlparse.quote(mtReq.text)
+        "&gw-to="+urlparse.quote(mtReq.to)+"&gw-text="+urlparse.quote(mtReq.text) + \
+        "&gw-coding="+mtReq.coding+"&gw-dlr-mask="+mtReq.dlrMask+"&gw-dlr-url="+mtReq.dlrUrl + \
+        "&gw-resp-type="+mtReq.responseType
 
     resp = api.sendGetRequest(url)
     print("RESULT = ")

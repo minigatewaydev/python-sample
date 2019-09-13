@@ -15,7 +15,7 @@ class JsonStringBuilder:
         if hasattr(mtReq, 'dlrUrl'):
             jsonData['gw-dlr-url'] = mtReq.dlrUrl
         jsonData['gw-coding'] = mtReq.coding
-
+        jsonData['gw-resp-type'] = mtReq.responseType
         return json.dumps(jsonData)
 
     def generateJson(obj):
