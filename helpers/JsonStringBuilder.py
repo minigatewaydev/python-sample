@@ -10,10 +10,8 @@ class JsonStringBuilder:
         jsonData['gw-from'] = mtReq.from_
         jsonData['gw-to'] = mtReq.to
         jsonData['gw-text'] = mtReq.text
-        if hasattr(mtReq, 'dlrMask'):
-            jsonData['gw-dlr-mask'] = mtReq.dlrMask
-        if hasattr(mtReq, 'dlrUrl'):
-            jsonData['gw-dlr-url'] = mtReq.dlrUrl
+        jsonData['gw-dlr-mask'] = mtReq.dlrMask
+        jsonData['gw-dlr-url'] = mtReq.dlrUrl
         jsonData['gw-coding'] = mtReq.coding
         jsonData['gw-resp-type'] = mtReq.responseType
         return json.dumps(jsonData)
