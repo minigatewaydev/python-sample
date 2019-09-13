@@ -12,8 +12,8 @@ jsonBuilder = _jsonBuilder.JsonStringBuilder
 # please specify the 'dlrUrl'
 
 mtReq = _mtReq.MtRequest(
-    "httppostpaid",  # username
-    "123456",  # password
+    "<YOUR-USERNAME>",  # username
+    "<YOUR-PASSWORD>",  # password
     "Python sample",  # from
     "60123456789",  # to
     "Python sample using HTTP POST & GET",  # text
