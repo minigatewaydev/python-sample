@@ -4,7 +4,8 @@ This sample is constructed using Visual Studio Code 1.36, so the IDE is required
 
 ### Running sample
 
-After all dependencies is restored, in Visual Stuido Code:
+After all dependencies is restored, in Visual Studio Code:
+- Make sure to change the required information in <code>app.py</code> file
 - Terminal > New Terminal
 - type <b><code>py app.py</code></b> and hit enter
 
