@@ -3,6 +3,8 @@
 This sample is constructed using Visual Studio Code 1.38.1, so the editor is required if you want to run the application out of the box. You may also use another IDE of your choice, but some code structure may need some modification or conversion.
 
 ## Project dependency
+
+This project uses the following library:
 - Requests → <code>pip install requests</code>
 
 ## Running sample in VSC
