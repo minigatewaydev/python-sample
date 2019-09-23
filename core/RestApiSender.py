@@ -3,7 +3,7 @@ import requests as api
 import models.SimpleHttpResponse as httpResp
 
 
-class WebApiSender:
+class RestApiSender:
 
     def sendGetRequest(url):
         try:

@@ -1,10 +1,10 @@
 import urllib.parse as urlparse
 import models.MtRequest as _mtReq
-import core.WebApiSender as _api
+import core.RestApiSender as _api
 import helpers.JsonStringBuilder as _jsonBuilder
 
 baseUrl = "http://162.253.16.28:5010/api/send"
-api = _api.WebApiSender
+api = _api.RestApiSender
 jsonBuilder = _jsonBuilder.JsonStringBuilder
 
 # TODO: change according to your own data
