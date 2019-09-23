@@ -1,5 +1,18 @@
 # Python Code Sample
 
-This sample is constructed using Visual Stuido Code 1.36, so the IDE is required if you want to modify the source and running the application as Console Application. You can also use another IDE, but the project maybe need some conversion before running the sample.
+This sample is constructed using Visual Studio Code 1.38.1, so the editor is required if you want to run the application out of the box. You may also use another IDE of your choice, but some code structure may need some modification or conversion.
 
+## Project dependency
+
+This project uses the following library:
+- Requests → <code>pip install requests</code>
+
+## Running sample in VSC
+
+After all dependencies is restored:
+- Download as ZIP and extract
+- In VSC, File > Open Folder
+- Make sure to change the required information in <code>app.py</code> file
+- Terminal > New Terminal
+- type <b><code>py app.py</code></b> and hit enter
 
