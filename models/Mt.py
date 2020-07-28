@@ -1,7 +1,7 @@
 class Mt:
 
-    def __init__(self, mtId, receiver, status, message):
+    def __init__(self, mtId, receiver, statusCode, statusDescription):
         self.mtId = mtId
         self.receiver = receiver
-        self.status = status
-        self.message = message
+        self.statusCode = statusCode
+        self.statusDescription = statusDescription
